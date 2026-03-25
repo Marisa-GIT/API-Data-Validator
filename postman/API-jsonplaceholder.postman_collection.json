@@ -1,0 +1,276 @@
+
+{
+  "info": {
+    "_postman_id": "efbcc571-b870-4a18-83cb-45b8edc8539b",
+    "name": "API-jsonplaceholder",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "28687770",
+    "_collection_link": "https://go.postman.co/collection/28687770-efbcc571-b870-4a18-83cb-45b8edc8539b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get all users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Tiempo de respuesta menor a 500ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Email contiene @\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0].email).to.include(\"@\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"La respuesta es un array\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData).to.be.an(\"array\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"El objeto tiene campos esperados\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"id\");\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"name\");\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"email\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BaseUrl}}",
+          "host": [
+            "{{BaseUrl}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get single user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Tiempo de respuesta menor a 500ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Email contiene @\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0].email).to.include(\"@\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"La respuesta es un array\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData).to.be.an(\"array\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"El objeto tiene campos esperados\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"id\");\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"name\");\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"email\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BaseUrl}}/?name=Clementina DuBuque",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            ""
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Clementina DuBuque"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Tiempo de respuesta menor a 500ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Email contiene @\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0].email).to.include(\"@\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"La respuesta es un array\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData).to.be.an(\"array\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"El objeto tiene campos esperados\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"id\");\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"name\");\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"email\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Isabel\",\r\n  \"email\": \"isabel@test.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}",
+          "host": [
+            "{{BaseUrl}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Tiempo de respuesta menor a 500ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Email contiene @\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0].email).to.include(\"@\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"La respuesta es un array\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData).to.be.an(\"array\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"El objeto tiene campos esperados\", function () {\r",
+              "    const jsonData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"id\");\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"name\");\r",
+              "    pm.expect(jsonData[0]).to.have.property(\"email\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Marisa\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/1",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BaseUrl",
+      "value": ""
+    }
+  ]
+}
