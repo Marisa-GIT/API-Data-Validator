@@ -220,6 +220,21 @@ ERROR Error creando usuario: Duplicate entry
 
 ---
 
+## 📸 Screenshots
+
+### 🔹 Postman Testing
+![Postman](screenshots/postmanGet.png)
+![Postman](screenshots/postmanTest.png)
+
+### 🔹 Reporte en Consola
+![Console](screenshots/console.PNG)
+
+### 🔹 Base de Datos MySQL
+![Database](screenshots/databaseUsers.png)
+![Database](sscreenshots/databaseTest.png)
+
+----
+
 ## 💡 Aprendizajes clave
 
 * Consumo de APIs REST
