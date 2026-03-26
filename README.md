@@ -227,11 +227,11 @@ ERROR Error creando usuario: Duplicate entry
 ![Postman](screenshots/postmanTest.png)
 
 ### 🔹 Reporte en Consola
-![Console](screenshots/console.PNG)
+![Console](screenshots/console.png)
 
 ### 🔹 Base de Datos MySQL
 ![Database](screenshots/databaseUsers.png)
-![Database](sscreenshots/databaseTest.png)
+![Database](screenshots/databaseTest.png)
 
 ----
 
