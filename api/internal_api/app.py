@@ -8,6 +8,15 @@ app = Flask(__name__)
 def home():
     return jsonify({"message": "API funcionando"})
 
+@app.route("/validate", methods=["POST"])
+def validate():
+    datos = request.get_json()
+
+    if not datos:
+        return jsonify({"error": "No se enviaron datos para validar"}), 400
+
+    return jsonify({"status": "Datos recibidos", "data": datos}), 200
+
 logging.basicConfig(
     filename="logs/api_errors.log",
     level=logging.ERROR,
